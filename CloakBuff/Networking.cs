@@ -1,17 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using R2API.Networking.Interfaces;
 using BepInEx;
 using BepInEx.Configuration;
 using EntityStates;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using R2API.Networking.Interfaces;
 using R2API.Utils;
 using RoR2;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security;
 using System.Security.Permissions;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 

@@ -3,6 +3,8 @@ using BepInEx.Configuration;
 using EntityStates;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using R2API.Networking;
+using R2API.Networking.Interfaces;
 using R2API.Utils;
 using RoR2;
 using System;
@@ -11,8 +13,6 @@ using System.Linq;
 using System.Security;
 using System.Security.Permissions;
 using UnityEngine;
-using R2API.Networking;
-using R2API.Networking.Interfaces;
 
 [module: UnverifiableCode]
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -77,7 +77,7 @@ namespace CloakBuff
         public static ConfigEntry<bool> EngiChargeMine { get; set; }
         public static ConfigEntry<bool> EngiSpiderMine { get; set; }
         public static ConfigEntry<bool> EngiSpiderMineCanExplodeOnImpaled { get; set; }
-        public static ConfigEntry<bool> RailgunnerPrimary {get; set;}
+        public static ConfigEntry<bool> RailgunnerPrimary { get; set; }
         public static ConfigEntry<bool> EnemyAIChange { get; set; }
 
         public GameObject DoppelgangerEffect = Resources.Load<GameObject>("prefabs/temporaryvisualeffects/DoppelgangerEffect");
