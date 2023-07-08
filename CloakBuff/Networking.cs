@@ -3,6 +3,7 @@ using BepInEx.Configuration;
 using EntityStates;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using R2API.Networking;
 using R2API.Networking.Interfaces;
 using R2API.Utils;
 using RoR2;
@@ -17,8 +18,13 @@ using UnityEngine.Networking;
 
 namespace CloakBuff
 {
-    public class Networking
+    public static class Networking
     {
+        public static void RegisterMessages()
+        {
+            NetworkingAPI.RegisterMessageType<Networking.SendToClientsToDeleteIndicator>();
+        }
+
         public class SendToClientsToDeleteIndicator : INetMessage
         {
             public int index;
@@ -39,7 +45,7 @@ namespace CloakBuff
 
             public void OnReceived()
             {
-                var instanceTracker = InstanceTracker.GetInstancesList<CloakBuffPlugin.KillPingerIfCloaked>();
+                var instanceTracker = InstanceTracker.GetInstancesList<Assets.KillPingerIfCloaked>();
                 if (instanceTracker != null)
                 {
                     if (instanceTracker[index])
